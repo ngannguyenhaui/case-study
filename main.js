@@ -6,6 +6,7 @@ let taskbar = new Taskbar();
 let bricks = new Bricks();
 let brickarr = [];
 let img = new Image();
+// luu toa do vien gach trong mang
 for (let i = 0; i < bricks.totalRow; i++) {
     brickarr[i] = [];
     for (let j = 0; j < bricks.totalCol; j++) {
@@ -15,11 +16,9 @@ for (let i = 0; i < bricks.totalRow; i++) {
                 y: bricks.getY(bricks.setY(i)),
                 isbroken: bricks.getStatusbrick()
             }
-
-
     }
 }
-
+//ve cac vien gach len man hinh
 function createBrick() {
     for (let i = 0; i < bricks.totalRow; i++) {
         for (let j = 0; j < bricks.totalCol; j++) {
@@ -31,7 +30,7 @@ function createBrick() {
 
 }
 
-
+//xu ly su kien bong dap vao gach
 function balltouchbricks() {
     for (let i = 0; i < bricks.totalRow; i++) {
         for (let j = 0; j < bricks.totalCol; j++) {
@@ -47,7 +46,7 @@ function balltouchbricks() {
         }
     }
 }
-
+//su kien nha phim
 function onKeyup(event) {
     switch (event.which) {
         case 37:
@@ -60,7 +59,7 @@ function onKeyup(event) {
             break;
     }
 }
-
+//su kien nhan phim
 function onKeydown(event) {
     switch (event.which) {
         case 37:
@@ -76,7 +75,7 @@ function onKeydown(event) {
 
 document.addEventListener('keyup', onKeyup);
 document.addEventListener('keydown', onKeydown);
-
+//kiem tra game ket thuc hay chua
 function checkGameover() {
     if (ball.y > canvas.height - ball.radius) {
         ball.liveBall();
@@ -88,7 +87,14 @@ function checkGameover() {
 
     }
 }
-
+//kiem tra chien thang
+function checkWin() {
+    if(bricks.getScore()>=bricks.totalCol*bricks.totalRow)
+    {
+        bricks.showWin(ctx);
+        cancelAnimationFrame(playGame());
+    }
+}
 function playGame() {
     if (!isGameover) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -103,7 +109,7 @@ function playGame() {
         balltouchbricks();
         bricks.showScore(ctx);
         ball.showLive(ctx);
-        bricks.showWin(ctx);
+        checkWin();
         checkGameover();
         requestAnimationFrame(playGame);
     }
