@@ -6,7 +6,6 @@ let Bricks = function () {
     this.height = 15;
     this.totalRow = 5;
     this.totalCol = 5;
-    this.arrbrick = [];
     this.score = 0;
     this.x;
     this.y;

@@ -31,9 +31,10 @@ let Taskbar = function () {
     };
 
     this.touchBall = function (ball) {
-        if (ball.x + ball.radius >= this.x && ball.x + ball.radius <= this.x + this.width
-            && ball.y + ball.radius > this.y && ball.y+ball.radius<=this.y+this.height) {
+        if (ball.x + ball.radius > this.x && ball.x + ball.radius < this.x + this.width
+            && ball.y + ball.radius > this.y && ball.y+ball.radius<this.y+this.height) {
             ball.dy = -ball.dy;
+            console.log(ball.dy);
 
         }
     };
