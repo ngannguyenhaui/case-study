@@ -59,15 +59,10 @@ let Bricks = function () {
     }
 
     this.showWin=function (context) {
-
-
             context.font="40px Arial";
             context.fillStyle="red";
             context.textAlign="center";
             context.fillText("YOU WIN ",canvas.width/2,canvas.height/2);
-
-
-
     }
 
 };

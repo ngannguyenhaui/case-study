@@ -6,6 +6,8 @@ let taskbar = new Taskbar();
 let bricks = new Bricks();
 let brickarr = [];
 let img = new Image();
+
+
 // luu toa do vien gach trong mang
 for (let i = 0; i < bricks.totalRow; i++) {
     brickarr[i] = [];
@@ -36,8 +38,8 @@ function balltouchbricks() {
         for (let j = 0; j < bricks.totalCol; j++) {
             if (!brickarr[i][j].isbroken) {
 
-                if (ball.x >= brickarr[i][j].x && ball.x <= brickarr[i][j].x + bricks.width &&
-                    ball.y + ball.radius >= brickarr[i][j].y && ball.y - ball.radius <= brickarr[i][j].y + bricks.height) {
+                if (ball.x +ball.radius >= brickarr[i][j].x && ball.x +ball.radius <= brickarr[i][j].x + bricks.width &&
+                    ball.y + ball.radius >= brickarr[i][j].y && ball.y + ball.radius <= brickarr[i][j].y + bricks.height) {
                     ball.dy = -ball.dy;
                     bricks.getScore(bricks.setScore(1));
                     brickarr[i][j].isbroken = true;
@@ -95,11 +97,14 @@ function checkWin() {
         cancelAnimationFrame(playGame());
     }
 }
+function loadImage() {
+    img.src = "image/totoro.jpeg";
+    ctx.drawImage(img, 0, 0, 500, 600);
+}
 function playGame() {
     if (!isGameover) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        img.src = "image/totoro.jpeg";
-        ctx.drawImage(img, 0, 0, 500, 600);
+       loadImage();
         ball.draw(ctx);
         taskbar.draw(ctx);
         ball.moveball();

@@ -1,9 +1,9 @@
 let Ball = function () {
-    this.x = canvas.width / 2;
-    this.radius = 5;
-    this.y = canvas.height - 60 - this.radius;
-    this.dx = 4;
-    this.dy = 4;
+    this.x = canvas.width / 2;//toa do theo truc X
+    this.radius = 5;//ban kinh
+    this.y = canvas.height - 60 - this.radius;//toa do theo truc Y
+    this.dx = 4;//delta x
+    this.dy = 4;//delta y
     this.color = 'red';
     this.live = 3;
     this.moveX = function () {
