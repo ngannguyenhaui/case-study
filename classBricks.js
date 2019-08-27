@@ -51,17 +51,17 @@ let Bricks = function () {
         context.closePath();
 
     };
-    this.showScore=function (context) {
-        context.font="20px Arial";
-        context.fillStyle="orange";
-        context.fillText("Score: "+this.getScore(),10,20);
+    this.showScore = function (context) {
+        context.font = "20px Arial";
+        context.fillStyle = "orange";
+        context.fillText("Score: " + this.getScore(), 10, 20);
     }
 
-    this.showWin=function (context) {
-            context.font="40px Arial";
-            context.fillStyle="red";
-            context.textAlign="center";
-            context.fillText("YOU WIN ",canvas.width/2,canvas.height/2);
+    this.showWin = function (context) {
+        context.font = "40px Arial";
+        context.fillStyle = "red";
+        context.textAlign = "center";
+        context.fillText("YOU WIN ", canvas.width / 2, canvas.height / 2);
     }
 
 };
