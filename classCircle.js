@@ -59,6 +59,7 @@ let Ball = function () {
             context.font = "40px Arial";
             context.fillStyle = "red";
             context.textAlign = "center";
+            context.fillText("You Lose", canvas.width / 2, (canvas.height / 2)-50);
             context.fillText("GAME OVER!", canvas.width / 2, canvas.height / 2);
         }
     }
