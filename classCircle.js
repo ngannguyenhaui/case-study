@@ -1,11 +1,23 @@
+const ParameterBall = {
+    radius: 5,
+    live: 3,
+    dxBall: 3,
+    dyBall: 3,
+    heightBall: 60,
+    color: 'red'
+};
+const ParameterTextLive = {
+    leftMargin: 400,
+    topMargin: 20
+};
 let Ball = function () {
     this.x = canvas.width / 2;//toa do theo truc X
-    this.radius = 5;//ban kinh
-    this.y = canvas.height - 60 - this.radius;//toa do theo truc Y
-    this.dx = 2;//delta x
-    this.dy = 2;//delta y
-    this.color = 'red';
-    this.live = 3;
+    this.radius = ParameterBall.radius;//ban kinh
+    this.y = canvas.height - ParameterBall.heightBall - this.radius;//toa do theo truc Y
+    this.dx = ParameterBall.dxBall;//delta x
+    this.dy = ParameterBall.dyBall;//delta y
+    this.color = ParameterBall.color;
+    this.live = ParameterBall.live;
     this.moveX = function () {
         this.x -= this.dx;
     };
@@ -44,15 +56,15 @@ let Ball = function () {
     }
     this.resetBall = function () {
         this.x = canvas.width / 2;
-        this.y = canvas.height - 60 - this.radius;
-        this.dx = 4;
-        this.dy = 4;
+        this.y = canvas.height - ParameterBall.heightBall - this.radius;
+        this.dx = ParameterBall.dxBall;
+        this.dy = ParameterBall.dyBall;
     };
 
     this.showLive = function (context) {
         context.font = "20px Arial";
         context.fillStyle = "orange";
-        context.fillText("Live: " + this.getlive(), 400, 20)
+        context.fillText("Live: " + this.getlive(), ParameterTextLive.leftMargin, ParameterTextLive.topMargin);
     }
     this.showgameOver = function (context) {
         if (this.getlive() <= 0) {

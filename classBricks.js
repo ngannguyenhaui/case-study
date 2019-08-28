@@ -1,16 +1,32 @@
+const ParameterBrick={
+ marginLeft:25,
+ marginTop:50,
+ marginBetween:25,
+ widthBrick:70,
+ heightBrick:15,
+ rowBrick:5,
+ columBrick:5,
+ color:'black',
+ score:0
+};
+const ParameterTextScore={
+    marginLeft:10,
+    marginTop:20
+}
+
 let Bricks = function () {
-    this.offsetX = 25;
-    this.offsetY = 50;
-    this.margin = 25;
-    this.width = 70;
-    this.height = 15;
-    this.totalRow = 5;
-    this.totalCol = 5;
-    this.score = 0;
+    this.offsetX = ParameterBrick.marginLeft;
+    this.offsetY = ParameterBrick.marginTop;
+    this.margin = ParameterBrick.marginBetween;
+    this.width = ParameterBrick.widthBrick;
+    this.height = ParameterBrick.heightBrick;
+    this.totalRow = ParameterBrick.rowBrick;
+    this.totalCol = ParameterBrick.columBrick;
+    this.score = ParameterBrick.score;
     this.x;
     this.y;
     this.isbroken = false;
-    this.color = 'black';
+    this.color = ParameterBrick.color;
     this.setX = function (x) {
         this.x = this.offsetX + x * (this.margin + this.width);
     };
@@ -54,7 +70,7 @@ let Bricks = function () {
     this.showScore = function (context) {
         context.font = "20px Arial";
         context.fillStyle = "orange";
-        context.fillText("Score: " + this.getScore(), 10, 20);
+        context.fillText("Score: " + this.getScore(), ParameterTextScore.marginLeft, ParameterTextScore.marginTop);
     }
 
     this.showWin = function (context) {

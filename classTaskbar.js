@@ -1,10 +1,18 @@
+const ParameterTaskbar = {
+    width: 50,
+    height: 10,
+    botMargin: 50,
+    speed: 5,
+    color: 'Blue'
+
+}
 let Taskbar = function () {
-    this.width = 50;
-    this.height = 10;
+    this.width = ParameterTaskbar.width;
+    this.height = ParameterTaskbar.height;
     this.x = canvas.width / 2 - this.width / 2;
-    this.y = canvas.height - this.height - 50;
-    this.speed = 5;
-    this.color = 'blue';
+    this.y = canvas.height - this.height - ParameterTaskbar.botMargin;
+    this.speed = ParameterTaskbar.speed;
+    this.color = ParameterTaskbar.color;
     this.isleft = false;
     this.isright = false;
     this.moveLeft = function () {
@@ -40,7 +48,7 @@ let Taskbar = function () {
     };
     this.resetTaskbar = function () {
         this.x = canvas.width / 2 - this.width / 2;
-        this.y = canvas.height - this.height - 50;
+        this.y = canvas.height - this.height - ParameterTaskbar.botMargin;
     }
     this.draw = function (context) {
         context.beginPath();
