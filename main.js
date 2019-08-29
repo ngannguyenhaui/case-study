@@ -39,7 +39,7 @@ function balltouchbricks() {
             if (!brickarr[i][j].isbroken) {
 
                 if (ball.x +ball.radius >= brickarr[i][j].x && ball.x +ball.radius <= brickarr[i][j].x + bricks.width &&
-                    ball.y + ball.radius >= brickarr[i][j].y && ball.y + ball.radius <= brickarr[i][j].y + bricks.height) {
+                    ball.y + ball.radius >= brickarr[i][j].y && ball.y -ball.radius <= brickarr[i][j].y + bricks.height) {
                     ball.dy = -ball.dy;
                     bricks.getScore(bricks.setScore(1));
                     brickarr[i][j].isbroken = true;
