@@ -99,7 +99,7 @@ function checkWin() {
 }
 function loadImage() {
     img.src = "image/totoro.jpeg";
-    ctx.drawImage(img, 0, 0, 500, 600);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 }
 function playGame() {
     if (!isGameover) {
