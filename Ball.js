@@ -4,7 +4,7 @@ const ParameterBall = {
     dxBall: 3,
     dyBall: 3,
     heightBall: 60,
-    color: 'red'
+    color: '#FFD700'
 };
 const ParameterTextLive = {
     leftMargin: 400,
@@ -53,7 +53,7 @@ let Ball = function () {
     };
     this.getlive = function () {
         return this.live;
-    }
+    };
     this.resetBall = function () {
         this.x = canvas.width / 2;
         this.y = canvas.height - ParameterBall.heightBall - this.radius;
@@ -63,9 +63,9 @@ let Ball = function () {
 
     this.showLive = function (context) {
         context.font = "20px Arial";
-        context.fillStyle = "orange";
+        context.fillStyle = "#CD853F";
         context.fillText("Live: " + this.getlive(), ParameterTextLive.leftMargin, ParameterTextLive.topMargin);
-    }
+    };
     this.showgameOver = function (context) {
         if (this.getlive() <= 0) {
             context.font = "40px Arial";

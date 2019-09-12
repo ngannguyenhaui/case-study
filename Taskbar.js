@@ -3,9 +3,9 @@ const ParameterTaskbar = {
     height: 10,
     botMargin: 50,
     speed: 5,
-    color: 'Blue'
+    color: '#20B2AA'
 
-}
+};
 let Taskbar = function () {
     this.width = ParameterTaskbar.width;
     this.height = ParameterTaskbar.height;
@@ -40,7 +40,7 @@ let Taskbar = function () {
 
     this.touchBall = function (ball) {
         if (ball.x + ball.radius > this.x && ball.x + ball.radius < this.x + this.width
-            && ball.y +ball.radius> this.y && ball.y-ball.radius < this.y + this.height) {
+            && ball.y + ball.radius > this.y && ball.y - ball.radius < this.y + this.height) {
             ball.dy = -ball.dy;
 
 
@@ -49,7 +49,7 @@ let Taskbar = function () {
     this.resetTaskbar = function () {
         this.x = canvas.width / 2 - this.width / 2;
         this.y = canvas.height - this.height - ParameterTaskbar.botMargin;
-    }
+    };
     this.draw = function (context) {
         context.beginPath();
         context.rect(this.x, this.y, this.width, this.height);
@@ -58,4 +58,4 @@ let Taskbar = function () {
         context.closePath();
     };
 
-}
+};

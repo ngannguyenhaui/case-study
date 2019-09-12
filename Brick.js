@@ -1,18 +1,18 @@
-const ParameterBrick={
- marginLeft:25,
- marginTop:50,
- marginBetween:25,
- widthBrick:70,
- heightBrick:15,
- rowBrick:5,
- columBrick:5,
- color:'black',
- score:0
+const ParameterBrick = {
+    marginLeft: 25,
+    marginTop: 50,
+    marginBetween: 25,
+    widthBrick: 70,
+    heightBrick: 15,
+    rowBrick: 5,
+    columBrick: 5,
+    color: '#A52A2A',
+    score: 0
 };
-const ParameterTextScore={
-    marginLeft:10,
-    marginTop:20
-}
+const ParameterTextScore = {
+    marginLeft: 10,
+    marginTop: 20
+};
 
 let Bricks = function () {
     this.offsetX = ParameterBrick.marginLeft;
@@ -69,9 +69,9 @@ let Bricks = function () {
     };
     this.showScore = function (context) {
         context.font = "20px Arial";
-        context.fillStyle = "orange";
+        context.fillStyle = "#CD853F";
         context.fillText("Score: " + this.getScore(), ParameterTextScore.marginLeft, ParameterTextScore.marginTop);
-    }
+    };
 
     this.showWin = function (context) {
         context.font = "40px Arial";
