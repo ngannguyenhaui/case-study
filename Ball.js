@@ -4,6 +4,7 @@ const ParameterBall = {
     dxBall: 3,
     dyBall: 3,
     heightBall: 60,
+    speed:3,
     color: '#FFD700'
 };
 const ParameterTextLive = {
@@ -18,6 +19,7 @@ let Ball = function () {
     this.dy = ParameterBall.dyBall;//delta y
     this.color = ParameterBall.color;
     this.live = ParameterBall.live;
+    this.speed=ParameterBall.speed;
     this.moveX = function () {
         this.x -= this.dx;
     };

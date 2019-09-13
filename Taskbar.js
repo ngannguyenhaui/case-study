@@ -41,9 +41,13 @@ let Taskbar = function () {
     this.touchBall = function (ball) {
         if (ball.x + ball.radius > this.x && ball.x + ball.radius < this.x + this.width
             && ball.y + ball.radius > this.y && ball.y - ball.radius < this.y + this.height) {
-            ball.dy = -ball.dy;
-
-
+            ball.dx=ParameterBall.dxBall;
+            ball.dy=ParameterBall.dyBall;
+            // let collidePoint=ball.x-(this.x+this.width/2);
+            // collidePoint=collidePoint/(this.width/2);
+            // let angle=collidePoint*(Math.PI/3);
+            // ball.dx = ball.speed * Math.sin(angle);
+            // ball.dy = -ball.speed * Math.cos(angle);
         }
     };
     this.resetTaskbar = function () {
