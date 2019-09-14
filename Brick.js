@@ -9,10 +9,10 @@ const ParameterBrick = {
     color: '#A52A2A',
     score: 0
 };
-const ParameterTextScore = {
-    marginLeft: 10,
-    marginTop: 20
-};
+// const ParameterTextScore = {
+//     marginLeft: 10,
+//     marginTop: 20
+// };
 
 let Bricks = function () {
     this.offsetX = ParameterBrick.marginLeft;
@@ -67,17 +67,6 @@ let Bricks = function () {
         context.closePath();
 
     };
-    this.showScore = function (context) {
-        context.font = "20px Arial";
-        context.fillStyle = "#CD853F";
-        context.fillText("Score: " + this.getScore(), ParameterTextScore.marginLeft, ParameterTextScore.marginTop);
-    };
 
-    this.showWin = function (context) {
-        context.font = "40px Arial";
-        context.fillStyle = "red";
-        context.textAlign = "center";
-        context.fillText("YOU WIN ", canvas.width / 2, canvas.height / 2);
-    }
 
 };

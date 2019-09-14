@@ -4,12 +4,7 @@ const ParameterBall = {
     dxBall: 3,
     dyBall: 3,
     heightBall: 60,
-    speed:3,
     color: '#FFD700'
-};
-const ParameterTextLive = {
-    leftMargin: 400,
-    topMargin: 20
 };
 let Ball = function () {
     this.x = canvas.width / 2;//toa do theo truc X
@@ -19,7 +14,6 @@ let Ball = function () {
     this.dy = ParameterBall.dyBall;//delta y
     this.color = ParameterBall.color;
     this.live = ParameterBall.live;
-    this.speed=ParameterBall.speed;
     this.moveX = function () {
         this.x -= this.dx;
     };
@@ -62,19 +56,5 @@ let Ball = function () {
         this.dx = ParameterBall.dxBall;
         this.dy = ParameterBall.dyBall;
     };
-
-    this.showLive = function (context) {
-        context.font = "20px Arial";
-        context.fillStyle = "#CD853F";
-        context.fillText("Live: " + this.getlive(), ParameterTextLive.leftMargin, ParameterTextLive.topMargin);
-    };
-    this.showgameOver = function (context) {
-        if (this.getlive() <= 0) {
-            context.font = "40px Arial";
-            context.fillStyle = "red";
-            context.textAlign = "center";
-            context.fillText("GAME OVER!", canvas.width / 2, canvas.height / 2);
-        }
-    }
 };
 

@@ -1,6 +1,6 @@
-const PARAMETERKEYBOARD={
-    KEYLEFT:37,
-    KEYRIGHT:39
+const PARAMETERKEYBOARD = {
+    KEYLEFT: 37,
+    KEYRIGHT: 39
 };
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
@@ -8,6 +8,7 @@ let isGameover = false;
 let ball = new Ball();
 let taskbar = new Taskbar();
 let bricks = new Bricks();
+let text = new Text();
 let brickarr = [];
 let img = new Image();
 
@@ -92,7 +93,7 @@ function checkGameover() {
         taskbar.resetTaskbar();
         if (ball.getlive() <= 0) {
             isGameover = true;
-            ball.showgameOver(ctx);
+            text.showgameOver(ctx, ball);
         }
 
     }
@@ -101,7 +102,7 @@ function checkGameover() {
 //kiem tra chien thang
 function checkWin() {
     if (bricks.getScore() >= bricks.totalCol * bricks.totalRow) {
-        bricks.showWin(ctx);
+        text.showWin(ctx);
         cancelAnimationFrame(playGame());
     }
 }
@@ -122,8 +123,8 @@ function playGame() {
         createBrick();
         taskbar.touchBall(ball);
         balltouchbricks();
-        bricks.showScore(ctx);
-        ball.showLive(ctx);
+        text.showScore(ctx, bricks);
+        text.showLive(ctx, ball);
         checkWin();
         checkGameover();
         requestAnimationFrame(playGame);
